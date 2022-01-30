@@ -10,21 +10,16 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-    - name: Yarn install
-      run: yarn install --frozen-lockfile
-    - name: Yarn Build
-      run: yarn install
-  
-  publish_s3:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+      - name: Yarn Build
+        run: yarn build
+      - run: ls
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v1
         with:
