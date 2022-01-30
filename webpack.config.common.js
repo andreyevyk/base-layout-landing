@@ -1,21 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 const deps = require("./package.json").dependencies;
 module.exports = {
-  mode: "development",
   output: {
-    publicPath: "http://localhost:4005/",
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
-
-  devServer: {
-    port: 4005,
-    historyApiFallback: true,
-  },
-
   module: {
     rules: [
       {
@@ -40,6 +35,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
       name: "landing",
       filename: "remoteEntry.js",
@@ -58,7 +54,7 @@ module.exports = {
       },
     }),
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
   ],
 };
