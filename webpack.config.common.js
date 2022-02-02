@@ -1,6 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TsconfigPathsPlugin = require( 'tsconfig-paths-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const path = require('path')
 
 const deps = require("./package.json").dependencies;
@@ -10,6 +12,7 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    plugins: [new TsconfigPathsPlugin()]
   },
   module: {
     rules: [
@@ -21,8 +24,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.(css)$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
