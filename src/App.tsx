@@ -1,5 +1,5 @@
-import globalStyles from "css/globalStyles";
-import ReactDOM from "react-dom";
+import globalStyles from 'css/globalStyles';
+import ReactDOM from 'react-dom';
 
 const App = () => {
   globalStyles();
@@ -10,7 +10,7 @@ const App = () => {
       <div>Language: TypeScript</div>
       <div>CSS: Empty CSS</div>
     </div>
-  )
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));
