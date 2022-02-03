@@ -19,8 +19,7 @@
     "outDir": "./lib",
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-		"strict": true,
-		"strictPropertyInitialization": true,
+		"strict": false,
 		"target": "ES5"
 	},
 	"include": [

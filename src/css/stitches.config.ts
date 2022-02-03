@@ -18,8 +18,8 @@ export const {
 
       shape: '#FFFFFF',
       shape02: '#DCE2E6',
-      background: '#E5E5E5',
-      background02: '#F5F8FA',
+      background: '#F5F8FA',
+      background02: '#E5E5E5',
 
       title: '#123952',
       text: '#617480',
