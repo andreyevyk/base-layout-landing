@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@andreyevyk/traveler-design-system@^1.0.0":
-  version "1.0.0"
-  resolved "https://npm.pkg.github.com/download/@andreyevyk/traveler-design-system/1.0.0/37078d1fd25d1a7bf7c5fa3ed50c3de4b1d13c1dd7189ed58a107cf31984748f#7e71a1a21ea7ac1c4e312988fffe4b54651f8abe"
-  integrity sha512-AHiTVrfNmtgNqCTvj02iQ37ED2MAWw6hQZjOV2LxRkbLPs2RyAUC2o2Kp7dCaz39ugBPmnODRObuYEeJiX4yJA==
+"@andreyevyk/traveler-design-system@^1.0.2":
+  version "1.0.2"
+  resolved "https://npm.pkg.github.com/download/@andreyevyk/traveler-design-system/1.0.2/1f8a7f1711ba239514477cf02fe3b4fc878caa84ebb4f8958bae09acd6221ef9#0a64a183266d6443559e0a7f0af4ab83af4c4832"
+  integrity sha512-jr9wsBuVPf6XZ2tHOTUc5qXc9250AJuWUvUXYFDI7M0WoYew6Ipo5gGZGv216c+wG/c9Zg8YdHCVV+SqW97B9A==
   dependencies:
     "@stitches/react" "^1.2.6"
     react "^17.0.2"

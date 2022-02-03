@@ -27,6 +27,7 @@ export const {
     },
     fonts: {
       primary: 'Heebo, sans-serif',
+      secondary: 'Barlow, sans-serif',
     },
   },
 });

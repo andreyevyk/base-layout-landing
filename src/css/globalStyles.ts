@@ -39,6 +39,9 @@ const globalStyles = globalCss({
     background: theme.colors.background,
     color: theme.colors.text,
   },
+  'body, div#app': {
+    height: '100vh',
+  },
 });
 
 export default globalStyles;

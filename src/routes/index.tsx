@@ -1,4 +1,5 @@
 import { BaseLayout } from 'pages/BaseLayout';
+import { Home } from 'pages/Home';
 import { useRoutes } from 'react-router-dom';
 
 export const Routes = () => {
@@ -8,10 +9,10 @@ export const Routes = () => {
       children: [
         {
           path: '/',
-          element: <div>Teste</div>,
+          element: <Home />,
         },
         {
-          path: '/teste',
+          path: '/search',
           element: <div>Teste4324</div>,
         },
       ],

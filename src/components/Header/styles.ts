@@ -1,3 +1,4 @@
+import { Input } from '@andreyevyk/traveler-design-system';
 import { styled, theme } from 'css/stitches.config';
 
 export const Wrapper = styled('div', {
@@ -6,4 +7,8 @@ export const Wrapper = styled('div', {
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '24px 160px 15px',
+});
+
+export const SearchInput = styled(Input, {
+  width: '416px !important',
 });
