@@ -1,14 +1,14 @@
 import { Input } from '@andreyevyk/traveler-design-system';
-import { styled, theme } from 'css/stitches.config';
+import styled from 'styled-components';
 
-export const Wrapper = styled('div', {
-  backgroundColor: theme.colors.background,
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '24px 160px 15px',
-});
+export const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 160px 15px;
+`;
 
-export const SearchInput = styled(Input, {
-  width: '416px !important',
-});
+export const SearchInput = styled(Input)`
+  width: 416px;
+`;

@@ -1,38 +1,38 @@
-import { styled } from '@stitches/react';
-import { theme } from 'css/stitches.config';
+import styled from 'styled-components';
 
-export const Wrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  background: theme.colors.shape,
-  border: `1px solid ${theme.colors.shape02}`,
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: ${({ theme }) => theme.colors.shape};
+  border: 1px solid ${({ theme }) => theme.colors.shape02};
+  border-radius: 25px;
 
-  borderRadius: 25,
-  '& img': {
-    borderRadius: '25px 25px 0 0',
-    height: '70%',
-    objectFit: 'cover',
-  },
-  '& main': {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    height: '30%',
-    marginLeft: 25,
-  },
+  img {
+    border-radius: 25px 25px 0 0;
+    height: 210px;
+    object-fit: cover;
+    max-width: 100%;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+  }
 
-  '& .title': {
-    fontFamily: theme.fonts.secondary,
-    fontWeight: 600,
-    fontSize: 23,
-    lineHeight: '23px',
-    color: theme.colors.title,
+  .title {
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 23px;
+    color: ${({ theme }) => theme.colors.title};
 
-    marginBottom: 7,
-  },
-  '& .description': {
-    fontSize: 15,
-    lineHeight: '25px',
-    color: theme.colors.text,
-  },
-});
+    margin-bottom: 7px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 25px;
+    color: ${({ theme }) => theme.colors.text};
+  }
+`;

@@ -1,8 +1,8 @@
 import { Button } from '@andreyevyk/traveler-design-system';
 import { Card } from 'components/Card';
 import { useNavigate } from 'react-router-dom';
-import thumbnail from 'assets/shutterstock_460353583 1.png';
-import { Wrapper, Main, Places } from './styles';
+import thumbnail from 'assets/florianopolis.png';
+import { Wrapper, Main, Places, PlaceCard } from './styles';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -22,11 +22,31 @@ export const Home = () => {
         <Button onClick={navigateToSearch}>Descrobrir todos os lugares</Button>
       </Main>
       <Places>
-        <Card img={thumbnail} title="Florianópolis" description="98 locais" />
-        <Card img={thumbnail} title="Florianópolis" description="98 locais" />
-        <Card img={thumbnail} title="Florianópolis" description="98 locais" />
-        <Card img={thumbnail} title="Florianópolis" description="98 locais" />
-        <Card img={thumbnail} title="Florianópolis" description="98 locais" />
+        <PlaceCard
+          img={thumbnail}
+          title="Florianópolis"
+          description="98 locais"
+        />
+        <PlaceCard
+          img={thumbnail}
+          title="Florianópolis"
+          description="98 locais"
+        />
+        <PlaceCard
+          img={thumbnail}
+          title="Florianópolis"
+          description="98 locais"
+        />
+        <PlaceCard
+          img={thumbnail}
+          title="Florianópolis"
+          description="98 locais"
+        />
+        <PlaceCard
+          img={thumbnail}
+          title="Florianópolis"
+          description="98 locais"
+        />
       </Places>
     </Wrapper>
   );

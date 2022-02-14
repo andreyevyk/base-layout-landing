@@ -4,11 +4,13 @@ interface CardProps {
   title: string;
   img: string;
   description: string;
+  className?: string;
 }
-const Card = ({ title, img, description }: CardProps) => {
+export const Card = ({ title, img, description, className }: CardProps) => {
   return (
-    <Wrapper className="card-component">
+    <Wrapper className={className}>
       <img src={img} alt="place" />
+      <div />
       <main>
         <span className="title">{title}</span>
         <span className="description">{description}</span>
@@ -16,7 +18,3 @@ const Card = ({ title, img, description }: CardProps) => {
     </Wrapper>
   );
 };
-
-Card.toString = () => '.card-component';
-
-export { Card };

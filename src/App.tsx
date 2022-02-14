@@ -1,14 +1,18 @@
-import globalStyles from 'css/globalStyles';
+import GlobalStyles from 'styles/globalStyles';
+import { ThemeProvider } from 'styled-components';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'routes';
+import { defaultTheme } from 'styles/theme';
 
 const App = () => {
-  globalStyles();
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyles />
+      <Router>
+        <Routes />
+      </Router>
+    </ThemeProvider>
   );
 };
 

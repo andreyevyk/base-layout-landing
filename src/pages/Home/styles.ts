@@ -1,44 +1,47 @@
 import { Card } from 'components/Card';
-import { styled, theme } from 'css/stitches.config';
+import styled from 'styled-components';
 
-export const Wrapper = styled('div', {
-  padding: '0 160px',
-  display: 'flex',
-  alignItems: 'center',
-  height: 'calc(100% - 87px)',
+export const Wrapper = styled.div`
+  padding: 0 160px;
+  display: flex;
+  align-items: center;
+  height: calc(100% - 87px);
+  justify-content: space-between;
+  overflow: hidden;
+`;
 
-  overflow: 'hidden',
-});
-export const Main = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  width: '32%',
-  marginRight: 150,
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 35%;
 
-  '& h1': {
-    color: theme.colors.title,
-    fontWeight: '600',
-    fontSize: 80,
-    lineHeight: '73px',
-    fontFamily: theme.fonts.secondary,
-  },
-  '& span': {
-    color: theme.colors.text,
-    fontSize: '20px',
-    lineHeight: '30px',
+  & h1 {
+    color: ${({ theme }) => theme.colors.title};
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 73px;
+    font-family: ${({ theme }) => theme.fonts.secondary};
+  }
+  & span {
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 20px;
+    line-height: 30px;
 
-    margin: '45px 0',
-  },
-});
-export const Places = styled('div', {
-  display: 'grid',
-  gap: 32,
-  gridTemplateColumns: 'repeat(2, 1fr)',
+    margin: 45px 0;
+  }
+`;
 
-  height: '100%',
+export const Places = styled.div`
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50%;
+  height: 100%;
+`;
 
-  [`& ${Card}:nth-of-type(even)`]: {
-    position: 'relative',
-    top: '76px',
-  },
-});
+export const PlaceCard = styled(Card)`
+  &:nth-of-type(even) {
+    position: relative;
+    top: 76px;
+  }
+`;
