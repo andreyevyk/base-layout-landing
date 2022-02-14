@@ -2,19 +2,20 @@ import logo from 'assets/logo.png';
 import { Button } from '@andreyevyk/traveler-design-system';
 import { Link, useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
+import { Routes } from 'routes';
 import { SearchInput, Wrapper } from './styles';
 
-export const Header = () => {
-  const { pathname } = useLocation();
+interface IHeader {
+  type: 'default' | 'search' | 'city' | 'place';
+}
 
-  const hadSearch = useMemo(() => pathname.includes('search'), [pathname]);
-
+export const Header = ({ type }: IHeader) => {
   return (
-    <Wrapper>
+    <Wrapper type={type}>
       <Link to="/">
         <img src={logo} alt="traveller" />
       </Link>
-      {hadSearch && <SearchInput />}
+      {type === 'search' && <SearchInput />}
       <Button color="secondary">Acesso restrito</Button>
     </Wrapper>
   );

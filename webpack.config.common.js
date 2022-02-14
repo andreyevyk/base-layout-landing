@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const TsconfigPathsPlugin = require( 'tsconfig-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require("dotenv-webpack");
 
 const path = require('path')
 
@@ -43,6 +44,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new Dotenv(),
     new ModuleFederationPlugin({
       name: "landing",
       filename: "remoteEntry.js",

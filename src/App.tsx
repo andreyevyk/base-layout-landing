@@ -4,14 +4,19 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'routes';
 import { defaultTheme } from 'styles/theme';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles />
-      <Router>
-        <Routes />
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <GlobalStyles />
+        <Router>
+          <Routes />
+        </Router>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 };

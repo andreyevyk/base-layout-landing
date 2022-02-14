@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.shape};
   border: 1px solid ${({ theme }) => theme.colors.shape02};
   border-radius: 25px;
-
+  height: fit-content;
   img {
     border-radius: 25px 25px 0 0;
     height: 210px;

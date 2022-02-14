@@ -1,12 +1,24 @@
 import { Button } from '@andreyevyk/traveler-design-system';
 import { Card } from 'components/Card';
 import { useNavigate } from 'react-router-dom';
-import thumbnail from 'assets/florianopolis.png';
-import { Wrapper, Main, Places, PlaceCard } from './styles';
+import { useQuery } from 'react-query';
+import { getCities } from 'services/citiesServices';
+import { Header } from 'components/Header';
+import { Wrapper, Main, Places } from './styles';
+
+interface City {
+  id: string;
+  description: string;
+  name: string;
+  places: [];
+  thumbnail_url: string;
+}
 
 export const Home = () => {
+  const { data: cities } = useQuery<City[]>('places', getCities, {
+    initialData: [],
+  });
   const navigate = useNavigate();
-
   function navigateToSearch() {
     navigate('/search');
   }
@@ -22,31 +34,14 @@ export const Home = () => {
         <Button onClick={navigateToSearch}>Descrobrir todos os lugares</Button>
       </Main>
       <Places>
-        <PlaceCard
-          img={thumbnail}
-          title="Florianópolis"
-          description="98 locais"
-        />
-        <PlaceCard
-          img={thumbnail}
-          title="Florianópolis"
-          description="98 locais"
-        />
-        <PlaceCard
-          img={thumbnail}
-          title="Florianópolis"
-          description="98 locais"
-        />
-        <PlaceCard
-          img={thumbnail}
-          title="Florianópolis"
-          description="98 locais"
-        />
-        <PlaceCard
-          img={thumbnail}
-          title="Florianópolis"
-          description="98 locais"
-        />
+        {cities.map((city) => (
+          <Card
+            key={city.id}
+            img={city.thumbnail_url}
+            title={city.name}
+            description={`${city.places.length} locais`}
+          />
+        ))}
       </Places>
     </Wrapper>
   );

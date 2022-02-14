@@ -6,9 +6,14 @@ interface CardProps {
   description: string;
   className?: string;
 }
-export const Card = ({ title, img, description, className }: CardProps) => {
+export const Card = ({
+  title,
+  img,
+  description,
+  className = '',
+}: CardProps) => {
   return (
-    <Wrapper className={className}>
+    <Wrapper className={`card-component ${className}`}>
       <img src={img} alt="place" />
       <div />
       <main>

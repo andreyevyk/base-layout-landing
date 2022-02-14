@@ -2,7 +2,7 @@ import { Card } from 'components/Card';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 0 160px;
+  padding: 0 8%;
   display: flex;
   align-items: center;
   height: calc(100% - 87px);
@@ -29,19 +29,39 @@ export const Main = styled.div`
 
     margin: 45px 0;
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Places = styled.div`
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   width: 50%;
   height: 100%;
-`;
 
-export const PlaceCard = styled(Card)`
-  &:nth-of-type(even) {
-    position: relative;
-    top: 76px;
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+  @media (max-width: 900px) {
+    width: 40%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+  @media (max-width: 600px) {
+    display: none;
+  }
+
+  .card-component {
+    &:nth-of-type(even) {
+      position: relative;
+      top: 76px;
+      @media (max-width: 900px) {
+        top: 0;
+      }
+    }
   }
 `;
